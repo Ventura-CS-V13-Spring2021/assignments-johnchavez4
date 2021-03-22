@@ -4,18 +4,18 @@ using namespace std;
 
 int main()
 {
-  int start, end;
+  int range_start, range_end;
   int i, j;
 
   do
   {
     cout << "Enter two numbers to set your range as: ";
-    cin >> start >> end;
-    cout << "Here are the prime numbers within the range " << start << " to " << end << ":\n";
+    cin >> range_start >> range_end;
+    cout << "Here are the prime numbers within the range " << range_start << " to " << range_end << ":\n";
   }
-  while (start >= end; || start < 2 || end < 0);
+  while (range_start >= range_end || range_start < 2 || range_end < 0);
 
-  for (i = start; i <= end; i++)
+  for (i = range_start; i <= range_end; i++)
   {
     if (i == 0 || i == 1)
       continue;
