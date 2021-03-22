@@ -14,7 +14,9 @@ int main()
   cout << "Enter the number of employees: ";
   cin >> employee;
 
-  for (i = 0, i < employee; i++)
+  ofs.open("employee.txt");
+
+  for (i = 0; i < employee; i++)
   {
     cout << "Enter the employee ID: \n";
     cin >> employee_ID;
@@ -24,9 +26,11 @@ int main()
     cin >> department;
     cout << "Enter the salary: $\n";
     cin >> salary;
+    ofs << employee << endl;
+    ofs << employee_ID << end;
+    ofs << employee_name << endl;
+    ofs << department << endl;
+    ofs << salary << endl;
   }
-  
-
-  ofs.open("employee.txt");
-  
+  ofs.close();
 }
