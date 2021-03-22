@@ -1,11 +1,12 @@
 #include  <iostream>
+#include  <cstdlib>
 #include  <ctime>
 
 using namespace std;
 
 int main()
 {
-  int i, random_num;
+  int i, greater_value, random_num;
 
   cout << "Here are five random integers: \n" << endl;
 
@@ -16,5 +17,5 @@ int main()
     random_num = rand() % 100;
     cout << random_num << endl;
   }
-  
+
 }
