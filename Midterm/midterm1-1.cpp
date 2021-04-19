@@ -7,14 +7,11 @@ using namespace std;
 int main()
 {
   ofstream ofs;
-  int score1, score2;
-  string student_name;
+  int James_score1 = 100, James_score2 = 100;
 
   ofs.open("students.txt");
 
-  if (student_name == "James")
-  {
-      score1 = 100, score2 = 100;
-      cout << "James\n100   100";
-  }
+  ofs << "James" << "\n" << James_score1 << "   " << James_score2 << endl;
+
+  ofs.close();
 }
