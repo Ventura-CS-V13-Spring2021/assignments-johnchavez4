@@ -18,5 +18,14 @@ int getRdum(int random_num)
 
 int findMin_and_findMax(int min, int max)
 {
-    
+    int random_num;
+    int min, max;
+    if (min > random_num)
+    {
+        min = random_num;
+    }
+    if (max < random_num)
+    {
+        max = random_num;
+    }
 }
