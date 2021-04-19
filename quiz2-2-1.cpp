@@ -17,5 +17,4 @@ int main()
     random_num = rand() % 100;
     cout << random_num << endl;
   }
-
 }
