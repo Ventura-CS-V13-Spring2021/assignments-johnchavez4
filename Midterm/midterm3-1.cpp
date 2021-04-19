@@ -5,9 +5,18 @@
 
 using namespace std;
 
-int getRdum(int random_num, i, N)
+int getRdum(int random_num)
 {
-  N = 3;
+  int i;
+  int N = 3;
   srand(time(NULL));
-  for (i = 0; )
+  for (i = 0; i < N; i++)
+  {
+      random_num = rand() % 3;
+  }
+}
+
+int findMin_and_findMax(int min, int max)
+{
+    
 }
