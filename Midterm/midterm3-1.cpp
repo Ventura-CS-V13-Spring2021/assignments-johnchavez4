@@ -16,9 +16,8 @@ int getRdum(int random_num)
   }
 }
 
-int findMin_and_findMax(int min, int max)
+int findMin_and_findMax(int min, int max, int random_num)
 {
-    int random_num;
     int min, max;
     if (min > random_num)
     {
@@ -27,5 +26,20 @@ int findMin_and_findMax(int min, int max)
     if (max < random_num)
     {
         max = random_num;
+    }
+}
+
+int getDifference(int difference, int random_num)
+{
+    difference -= random_num;
+}
+
+int fileWrite(int difference)
+{
+    ofstream ofs;
+    ofs.open("question3.txt");
+    if (difference < 3)
+    {
+        return 0;
     }
 }
