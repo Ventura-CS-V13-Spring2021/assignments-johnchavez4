@@ -34,4 +34,10 @@ void count0cluster(int bin[], int size)
       {
           count0 = 0;
       }
+      if (bin[i] == 0)
+      {
+          count0++;
+      }
   }
+  cout << count0 << endl;
+}
