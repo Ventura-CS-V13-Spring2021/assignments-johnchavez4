@@ -43,6 +43,7 @@ void findmatchnum(int num1[], int size1, int num2[], int size2)
         }
       }
     }
+	match = 0;
     for (int i = 0; i < size2 - 1; i++)
     {
       for (int j = i + 1; j < size2; j++)
