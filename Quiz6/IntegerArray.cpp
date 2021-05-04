@@ -25,10 +25,15 @@ void IntegerArray::fillUp(void)
 
 void IntegerArray::getPrimeNumber(void) const
 {
-
+  
 }
 
 void IntegerArray::printAll(void) const
 {
-  std::cout << "Array content"
+  std::cout << "Array contents:/n";
+  for (int i = 0; i < N; i++)
+  {
+    std::cout << numbers[i] << "/t";
+  }
+  std::cout << std::endl;
 }
