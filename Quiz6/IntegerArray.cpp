@@ -11,7 +11,39 @@ int IntegerArray::getLength(void) const
 
 void IntegerArray::sortArray(int flag)
 {
-
+  int temp;
+  srand(time(0));
+  flag = rand(flag);
+  if (flag == 0)
+  {
+    for (int i = 0; i < N; i++)
+    {
+      for (int j = i + 1; j < N; j++)
+      {
+        if (numbers[i] > numbers[j])
+        {
+          temp = numbers[i];
+          numbers[i] = numbers[j];
+          numbers[j] = temp;  
+        }
+      }
+    }
+  }
+  else
+  {
+    for (int i = 0; i < N; i++)
+    {
+      for (int j = i + 1; j < N; j++)
+      {
+        if (numbers[i] > numbers[j])
+        {
+          temp = numbers[i];
+          numbers[i] = numbers[j];
+          numbers[j] = temp;  
+        }
+      }
+    }
+  }
 }
 
 void IntegerArray::fillUp(void)
