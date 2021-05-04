@@ -33,7 +33,7 @@ void IntegerArray::sortArray(int flag)
     {
       for (int j = i + 1; j < N; j++)
       {
-        if (numbers[i] > numbers[j])
+        if (numbers[i] < numbers[j])
         {
           temp = numbers[i];
           numbers[i] = numbers[j];
@@ -53,36 +53,32 @@ void IntegerArray::fillUp(void)
   }
 }
 
-void IntegerArray::getPrimeNumber(void) const
+void IntegerArray::getPrimeNumbers(void) const
 {
-  int start, end;
-  int primes = 0;
+  int start = numbers[0]; 
+  int end = numbers[9];
   int i, p;
-  do
-  {
-    start = numbers[0];
-    end = numbers[9];
-  }
   while (start >= end || start < 2 || end < 0);
+  
   for (p = start; p <= end; p++)
   {
     if (p == 0 || p == 1)
-      continue;
+      std::cout << "Error.";
     
     for(i = 2; i <= (p / 2); i++)
 		  if (p % i == 0) 
-			  break;
+			  std::cout << "0";
 	  if (i > (p / 2))
-      primes++;
+      std:: cout << p << ", ";
   }
 }
 
 void IntegerArray::printAll(void) const
 {
-  std::cout << "Array contents:\n";
-  for (int i = 0; i < N; i++)
-  {
-    std::cout << numbers[i] << "\t";
-  }
-  std::cout << std::endl;
+	std::cout << "Array contents:\n";
+	for (int i = 0; i < N; i++)
+	{
+		std::cout << numbers[i] << "\t";
+	}
+	std::cout << std::endl;
 }

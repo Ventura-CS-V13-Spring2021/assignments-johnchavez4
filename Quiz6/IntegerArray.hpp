@@ -12,7 +12,7 @@ public:
   int getLength(void) const;
   void sortArray(int flag); // if flag is 0, ascending, otherwise descending
   void fillUp(void);
-  void getPrimeNumber(void) const;
+  void getPrimeNumbers(void) const;
   void printAll(void) const;
 };
 
