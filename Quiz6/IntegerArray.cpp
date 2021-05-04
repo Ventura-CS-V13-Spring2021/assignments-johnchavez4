@@ -11,5 +11,24 @@ int IntegerArray::getLength(void) const
 
 void IntegerArray::sortArray(int flag)
 {
-  
+
+}
+
+void IntegerArray::fillUp(void)
+{
+  srand(time(0));
+  for (int i = 0; i < N; i++)
+  {
+    numbers[i] = rand() % 100;
+  }
+}
+
+void IntegerArray::getPrimeNumber(void) const
+{
+
+}
+
+void IntegerArray::printAll(void) const
+{
+  std::cout << "Array content"
 }
