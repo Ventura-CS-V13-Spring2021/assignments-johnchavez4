@@ -25,7 +25,26 @@ void IntegerArray::fillUp(void)
 
 void IntegerArray::getPrimeNumber(void) const
 {
-  
+  int start, end;
+  int primes = 0;
+  int p;
+  do
+  {
+    start = numbers[0];
+    end = numbers[9];
+  }
+  while (start >= end || start < 2 || end < 0);
+  for (p = start; p <= end; p++)
+  {
+    if (p == 0 || p == 1)
+      continue;
+    
+    for(i = 2; i <= (p / 2); i++)
+		  if (p % i == 0) 
+			  break;
+	  if (i > (p / 2))
+      primes++;
+  }
 }
 
 void IntegerArray::printAll(void) const
