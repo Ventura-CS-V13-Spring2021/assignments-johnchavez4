@@ -12,8 +12,6 @@ int IntegerArray::getLength(void) const
 void IntegerArray::sortArray(int flag)
 {
   int temp;
-  srand(time(0));
-  flag = rand(flag);
   if (flag == 0)
   {
     for (int i = 0; i < N; i++)
@@ -59,7 +57,7 @@ void IntegerArray::getPrimeNumber(void) const
 {
   int start, end;
   int primes = 0;
-  int p;
+  int i, p;
   do
   {
     start = numbers[0];
@@ -81,10 +79,10 @@ void IntegerArray::getPrimeNumber(void) const
 
 void IntegerArray::printAll(void) const
 {
-  std::cout << "Array contents:/n";
+  std::cout << "Array contents:\n";
   for (int i = 0; i < N; i++)
   {
-    std::cout << numbers[i] << "/t";
+    std::cout << numbers[i] << "\t";
   }
   std::cout << std::endl;
 }
