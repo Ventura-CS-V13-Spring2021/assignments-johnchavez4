@@ -8,11 +8,6 @@ Address::Address(): street("nostreet"), state("nostate"), zip(0)
 
 Address::Address(string str, string st, int z): street(str), state(st), zip(z)
 {
-  if (str.empty() || st.empty() || z < 0)
-  {
-    std::cout << "No entry for street and/or state, and/or invalid zip code\n";
-    exit(1);
-  }
 }
 
 string Address::getStreet() const

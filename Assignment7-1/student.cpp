@@ -1,7 +1,7 @@
 #include "student.hpp" 
 #include "DOB.hpp"
 #include "address.hpp" 
-#include <iostream>
+#include <iostream> 
 #include <string>
 
 Student::Student(): sname("noname"), id(0), dob(1, 1, 1), address("nostreet", "nostate", 0)
@@ -10,11 +10,6 @@ Student::Student(): sname("noname"), id(0), dob(1, 1, 1), address("nostreet", "n
 
 Student::Student(string stname, int idnum, DOB date, Address addr): sname(stname), id(idnum), dob(date), address(addr)
 {
-  if (stname.empty() || idnum < 0)
-  {
-    std::cout << "One or more possible errors detected: no name and/or ID number provided\n";
-    exit(1);
-  }
 }
 
 int Student::getID() const
@@ -59,5 +54,7 @@ void Student::setAddress(Address addr)
 
 void Student::printStudent()
 {
-  std::cout << "Name:" << sname << "  ID number:" << id << dob.getMonth() << dob.getDay() << dob.getYear()
-  << address.getStreet() << address.getState() << address.getZip() << std::endl;
+  std::cout << "Name: " << sname << "  ID number: " << id << "  DOB:" << dob.getMonth() << "/" << dob.getDay() <<
+  "/" << dob.getYear() << "  Address: " << address.getStreet() << ", "<< address.getState() << ", " << address.getZip()
+  << std::endl;
+}

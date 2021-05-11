@@ -7,11 +7,6 @@ DOB::DOB(): month(1), day(1), year(1)
 
 DOB::DOB(int m, int d, int y): month(m), day(d), year(y)
 {
-  if (m < 1 || d < 1 || y < 1)
-  {
-    std::cout << "Invalid value(s) for DOB\n";
-    exit(1);
-  }
 }
 
 int DOB::getMonth() const
