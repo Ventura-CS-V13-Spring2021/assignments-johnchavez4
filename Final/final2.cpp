@@ -25,3 +25,12 @@ void count(int arr[], int length)
     std::cout << arr[i] << " " << count << std::endl; 
   } 
 }
+
+int main() 
+{ 
+  int arr[] = {-12, 3, -12, 4, 1, 1, -12, 1, -1, 1, 2, 3, 4, 2, 3, -12}; 
+  int length = sizeof(arr)/sizeof(arr[0]); 
+  std::sort(arr, arr + length, std::greater<int>());
+  count(arr, length); 
+  return 0; 
+} 
