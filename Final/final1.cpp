@@ -25,4 +25,25 @@ int main()
     std::cout << arr[i] << "\t";
   }
   std::cout << std::endl;
+
+  int max = 0;
+  int index, num;
+
+  for(int i = 0; i < length; i++)
+  {
+    num = getNumDiv(arr, arr[i], length);
+
+    if(i == 0)
+    {
+      max = num;
+      index = i;
+    }
+    else if(max < num)
+    {
+      max = num;
+      index = i ;
+    }
+  }
+  std::cout << "Element with greatest number of divisible elements: " << arr[index] << std::endl;
+  std::cout << "Number of divisible elements: " << max << std::endl;
 }
