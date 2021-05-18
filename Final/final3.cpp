@@ -47,11 +47,13 @@ Student::Student()
 
 void Student::studentInput()
 {
+    cin.ignore(1000, '\n');
     cout << "Student name? ";
     getline(cin, name);
     cout << std::endl;
     cout << "# of courses? ";
     cin >> numClasses;
+    cin.ignore(1000, '\n');
     cout << "Class List:";
     for (int i = 0; i < numClasses; i++)
     {
@@ -103,14 +105,22 @@ Student::~Student()
 
 int main()
 {
-    char answer;
-    Student s1;
-    Student s2;
-    
+  char answer;
+  Student s1;
+  Student s2;
+  do
+  {
     s1.resetClasses();
     s1.studentInput();
     s2 = s1;
     s1.studentOutput();
     s2.studentOutput();
-    return 0;
+    cout << "Will you enter another student's details (press(y/n))?" << endl;
+    cin >> answer;
+  }
+  while(answer == 'y' || answer == 'Y');
+  Student s3(s2);
+  s3.studentOutput();
+  cin.get();
+  return 0;
 }
