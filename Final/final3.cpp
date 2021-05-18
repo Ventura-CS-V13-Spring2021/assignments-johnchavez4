@@ -19,7 +19,7 @@ class Student
 
     int getNumClasses() const
     {
-      return numClasses
+      return numClasses;
     }
 
     void studentInput();
@@ -37,3 +37,47 @@ class Student
     Student(const Student& stuObj);
     ~Student();
 };
+
+Student::Student()
+{
+    name = "\0";
+    numClasses = 0;
+    classList = new string[100];
+}
+
+void Student::studentInput()
+{
+    std::cin.ignore(1000, "\n");
+    std::cout << "Student name? ";
+    getline(cin, name);
+    std::cout << endl;
+    std::cout << "# of courses? ";
+    std::cin >> numClasses;
+    std::cin.ignore(1000, "\n");
+    std::cout << "Class List:";
+    for (int i = 0; i < numClasses; i++)
+    {
+        getline(cin, classList[i]);
+    }
+}
+
+void Student::studentOutput()
+{
+  std::cout << "Name: " << name << std::endl;
+  std::cout << "# of classes: " << numClasses << std::endl;
+  std::cout << "Student classes: \n";
+  for (int i = 0; i < numClasses; i++)
+  {
+    std::cout << classList[i] << std::endl;
+  }
+}
+
+Student::Student(const Student& stuObj):
+name(stuObj.getName()), numClasses(stuObj.getNumClasses())
+{
+  classList = new std::string [numClasses];
+  for (int i = 0; i < numClasses; i++)
+  {
+    classList[i] = stuObj.classList[i];
+  }
+}
