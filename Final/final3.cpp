@@ -2,13 +2,15 @@
 #include <cstdlib>
 #include <string>
 
-Class Student
+class Student
 {
   private:
     std::string name;
     int numClasses;
     std::string* classList;
 
-    public:
-      
-}
+  public:
+    Student();
+    std::string getName() const;
+    int getNumClasses() const;
+};
