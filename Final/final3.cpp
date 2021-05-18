@@ -81,3 +81,38 @@ name(stuObj.getName()), numClasses(stuObj.getNumClasses())
     classList[i] = stuObj.classList[i];
   }
 }
+
+Student& Student::operator=(const Student& rValue)
+{
+  if (numClasses != rValue.numClasses)
+  {
+    delete[] classList;
+    classList = new std::string[rValue.numClasses];
+  }
+  name = rValue.name;
+  numClasses = rValue.numClasses;
+  for (int i = 0; i < numClasses; i++)
+  {
+    classList[i] = rValue.classList[i];
+  }
+  return *this;
+}
+
+Student::~Student()
+{
+  delete[] classList;
+}
+
+int main()
+{
+  char answer;
+  Student s1;
+  Student s2;
+    
+  s1.resetClasses();
+  s1.studentInput();
+  s2 = s1;
+  s1.studentOutput();
+  s2.studentOutput();
+  return 0;
+}
