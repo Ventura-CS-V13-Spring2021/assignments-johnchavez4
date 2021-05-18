@@ -1,4 +1,5 @@
-#include <iostream>
+#ifndef STUDENT_H
+#define STUDENT_H
 #include <cstdlib>
 #include <string>
 
@@ -13,4 +14,11 @@ class Student
     Student();
     std::string getName() const;
     int getNumClasses() const;
+    void studentInput();
+    void resetClasses();
+    void studentOutput();
+    Student& operator=(const Student& rValue);
+    Student(const Student& stuObj);
+    ~Student();
 };
+#endif
