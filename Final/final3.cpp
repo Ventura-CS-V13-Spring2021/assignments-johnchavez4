@@ -6,13 +6,13 @@ using namespace std;
 class Student
 {
   private:
-    std::string name;
+    string name;
     int numClasses;
-    std::string* classList;
+    string* classList;
 
   public:
     Student();
-    std::string getName() const
+    string getName() const
     {
       return name;
     }
@@ -47,14 +47,12 @@ Student::Student()
 
 void Student::studentInput()
 {
-    std::cin.ignore(1000, "\n");
-    std::cout << "Student name? ";
+    cout << "Student name? ";
     getline(cin, name);
-    std::cout << endl;
-    std::cout << "# of courses? ";
-    std::cin >> numClasses;
-    std::cin.ignore(1000, "\n");
-    std::cout << "Class List:";
+    cout << std::endl;
+    cout << "# of courses? ";
+    cin >> numClasses;
+    cout << "Class List:";
     for (int i = 0; i < numClasses; i++)
     {
         getline(cin, classList[i]);
@@ -63,56 +61,56 @@ void Student::studentInput()
 
 void Student::studentOutput()
 {
-  std::cout << "Name: " << name << std::endl;
-  std::cout << "# of classes: " << numClasses << std::endl;
-  std::cout << "Student classes: \n";
-  for (int i = 0; i < numClasses; i++)
-  {
-    std::cout << classList[i] << std::endl;
-  }
+    cout << "Name: " << name << endl;
+    cout << "# of classes: " << numClasses << endl;
+    cout << "Student classes: \n";
+    for (int i = 0; i < numClasses; i++)
+    {
+        cout << classList[i] << endl;
+    }
 }
 
 Student::Student(const Student& stuObj):
 name(stuObj.getName()), numClasses(stuObj.getNumClasses())
 {
-  classList = new std::string [numClasses];
-  for (int i = 0; i < numClasses; i++)
-  {
-    classList[i] = stuObj.classList[i];
-  }
+    classList = new std::string [numClasses];
+    for (int i = 0; i < numClasses; i++)
+    {
+        classList[i] = stuObj.classList[i];
+    }
 }
 
 Student& Student::operator=(const Student& rValue)
 {
-  if (numClasses != rValue.numClasses)
-  {
-    delete[] classList;
-    classList = new std::string[rValue.numClasses];
-  }
-  name = rValue.name;
-  numClasses = rValue.numClasses;
-  for (int i = 0; i < numClasses; i++)
-  {
-    classList[i] = rValue.classList[i];
-  }
-  return *this;
+    if (numClasses != rValue.numClasses)
+    {
+        delete[] classList;
+        classList = new std::string[rValue.numClasses];
+    }
+    name = rValue.name;
+    numClasses = rValue.numClasses;
+    for (int i = 0; i < numClasses; i++)
+    {
+        classList[i] = rValue.classList[i];
+    }
+    return *this;
 }
 
 Student::~Student()
 {
-  delete[] classList;
+    delete[] classList;
 }
 
 int main()
 {
-  char answer;
-  Student s1;
-  Student s2;
+    char answer;
+    Student s1;
+    Student s2;
     
-  s1.resetClasses();
-  s1.studentInput();
-  s2 = s1;
-  s1.studentOutput();
-  s2.studentOutput();
-  return 0;
+    s1.resetClasses();
+    s1.studentInput();
+    s2 = s1;
+    s1.studentOutput();
+    s2.studentOutput();
+    return 0;
 }
